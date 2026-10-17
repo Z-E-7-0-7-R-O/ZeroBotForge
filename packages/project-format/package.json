@@ -1,0 +1,17 @@
+{
+  "name": "@zerobotforge/project-format",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Versioned ZeroBotForge project model, schema, migration, and serialization.",
+  "exports": {
+    ".": "./src/project.model.ts",
+    "./schema": "./src/project.schema.ts",
+    "./migrations": "./src/project.migrations.ts",
+    "./serialization": "./src/project.serialization.ts"
+  },
+  "dependencies": {
+    "@zerobotforge/shared": "0.1.0",
+    "zod": "^3.24.1"
+  }
+}

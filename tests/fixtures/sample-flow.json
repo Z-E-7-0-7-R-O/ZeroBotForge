@@ -1,0 +1,148 @@
+{
+  "id": "flow-customer-support",
+  "name": "Customer Support Flow",
+  "description": "Sample multi-step support flow exercising start, text, button, image, and action nodes.",
+  "nodes": [
+    {
+      "id": "node-start",
+      "type": "start",
+      "label": "Start Conversation",
+      "position": {
+        "x": 80,
+        "y": 120
+      },
+      "data": {}
+    },
+    {
+      "id": "node-welcome-text",
+      "type": "text",
+      "label": "Welcome Message",
+      "position": {
+        "x": 320,
+        "y": 120
+      },
+      "data": {
+        "text": "Welcome to ZeroBotForge Support. How can we help you today?"
+      }
+    },
+    {
+      "id": "node-topic-buttons",
+      "type": "button",
+      "label": "Topic Prompt",
+      "position": {
+        "x": 580,
+        "y": 120
+      },
+      "data": {
+        "text": "Please select a support category:",
+        "buttons": [
+          {
+            "id": "status",
+            "label": "System Status"
+          },
+          {
+            "id": "guide",
+            "label": "Architecture Guide"
+          }
+        ]
+      }
+    },
+    {
+      "id": "node-status-action",
+      "type": "action",
+      "label": "Check Service Status",
+      "position": {
+        "x": 860,
+        "y": 40
+      },
+      "data": {
+        "operationId": "lookup_service_status",
+        "params": {
+          "component": "core-gateway",
+          "timeoutMs": 1500
+        }
+      }
+    },
+    {
+      "id": "node-status-ok",
+      "type": "text",
+      "label": "Status Operational",
+      "position": {
+        "x": 1140,
+        "y": 20
+      },
+      "data": {
+        "text": "All core services are operational."
+      }
+    },
+    {
+      "id": "node-status-degraded",
+      "type": "text",
+      "label": "Status Fallback",
+      "position": {
+        "x": 1140,
+        "y": 140
+      },
+      "data": {
+        "text": "Status check is temporarily unavailable. Please try again later."
+      }
+    },
+    {
+      "id": "node-guide-image",
+      "type": "image",
+      "label": "Architecture Diagram",
+      "position": {
+        "x": 860,
+        "y": 240
+      },
+      "data": {
+        "url": "https://example.com/assets/zerobotforge-architecture.png",
+        "caption": "ZeroBotForge layered runtime overview."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-start-welcome",
+      "sourceNodeId": "node-start",
+      "sourceHandle": "next",
+      "targetNodeId": "node-welcome-text",
+      "targetHandle": "in"
+    },
+    {
+      "id": "edge-welcome-buttons",
+      "sourceNodeId": "node-welcome-text",
+      "sourceHandle": "next",
+      "targetNodeId": "node-topic-buttons",
+      "targetHandle": "in"
+    },
+    {
+      "id": "edge-button-status",
+      "sourceNodeId": "node-topic-buttons",
+      "sourceHandle": "button:status",
+      "targetNodeId": "node-status-action",
+      "targetHandle": "in"
+    },
+    {
+      "id": "edge-action-success",
+      "sourceNodeId": "node-status-action",
+      "sourceHandle": "success",
+      "targetNodeId": "node-status-ok",
+      "targetHandle": "in"
+    },
+    {
+      "id": "edge-action-failure",
+      "sourceNodeId": "node-status-action",
+      "sourceHandle": "failure",
+      "targetNodeId": "node-status-degraded",
+      "targetHandle": "in"
+    },
+    {
+      "id": "edge-button-guide",
+      "sourceNodeId": "node-topic-buttons",
+      "sourceHandle": "button:guide",
+      "targetNodeId": "node-guide-image",
+      "targetHandle": "in"
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "format": "zerobotforge.project",
+  "formatVersion": 1,
+  "id": "project-support-assistant",
+  "name": "ZeroBotForge Support Assistant",
+  "createdAt": "2026-01-15T10:00:00.000Z",
+  "updatedAt": "2026-01-15T12:30:00.000Z",
+  "metadata": {
+    "description": "Reference customer support Telegram bot project for validation and export testing.",
+    "author": "ZeroBotForge Engineering",
+    "tags": [
+      "support",
+      "reference",
+      "telegram"
+    ]
+  },
+  "bot": {
+    "displayName": "Support Assistant Bot",
+    "username": "zbf_support_bot",
+    "tokenEnvVar": "TELEGRAM_BOT_TOKEN",
+    "parseMode": "Markdown"
+  },
+  "flows": [
+    {
+      "id": "flow-customer-support",
+      "name": "Customer Support Flow",
+      "description": "Primary support conversation flow.",
+      "nodes": [
+        {
+          "id": "node-start",
+          "type": "start",
+          "label": "Start Conversation",
+          "position": {
+            "x": 80,
+            "y": 120
+          },
+          "data": {}
+        },
+        {
+          "id": "node-welcome-text",
+          "type": "text",
+          "label": "Welcome Message",
+          "position": {
+            "x": 320,
+            "y": 120
+          },
+          "data": {
+            "text": "Welcome to ZeroBotForge Support. How can we help you today?"
+          }
+        },
+        {
+          "id": "node-topic-buttons",
+          "type": "button",
+          "label": "Topic Prompt",
+          "position": {
+            "x": 580,
+            "y": 120
+          },
+          "data": {
+            "text": "Please select a support category:",
+            "buttons": [
+              {
+                "id": "status",
+                "label": "System Status"
+              },
+              {
+                "id": "guide",
+                "label": "Architecture Guide"
+              }
+            ]
+          }
+        },
+        {
+          "id": "node-status-ok",
+          "type": "text",
+          "label": "Status Operational",
+          "position": {
+            "x": 860,
+            "y": 40
+          },
+          "data": {
+            "text": "All core services are operational."
+          }
+        },
+        {
+          "id": "node-guide-image",
+          "type": "image",
+          "label": "Architecture Diagram",
+          "position": {
+            "x": 860,
+            "y": 220
+          },
+          "data": {
+            "url": "https://example.com/assets/zerobotforge-architecture.png",
+            "caption": "ZeroBotForge layered runtime overview."
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "edge-start-welcome",
+          "sourceNodeId": "node-start",
+          "sourceHandle": "next",
+          "targetNodeId": "node-welcome-text",
+          "targetHandle": "in"
+        },
+        {
+          "id": "edge-welcome-buttons",
+          "sourceNodeId": "node-welcome-text",
+          "sourceHandle": "next",
+          "targetNodeId": "node-topic-buttons",
+          "targetHandle": "in"
+        },
+        {
+          "id": "edge-button-status",
+          "sourceNodeId": "node-topic-buttons",
+          "sourceHandle": "button:status",
+          "targetNodeId": "node-status-ok",
+          "targetHandle": "in"
+        },
+        {
+          "id": "edge-button-guide",
+          "sourceNodeId": "node-topic-buttons",
+          "sourceHandle": "button:guide",
+          "targetNodeId": "node-guide-image",
+          "targetHandle": "in"
+        }
+      ]
+    }
+  ],
+  "activeFlowId": "flow-customer-support",
+  "generation": {
+    "language": "typescript",
+    "runtime": "node",
+    "nodeVersion": 22,
+    "moduleFormat": "esm",
+    "packageManager": "npm",
+    "strict": true,
+    "includeReadme": true,
+    "includeTests": false
+  }
+}

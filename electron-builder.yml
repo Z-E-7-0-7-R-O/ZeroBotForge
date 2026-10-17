@@ -1,0 +1,42 @@
+appId: com.zerobotforge.desktop
+productName: ZeroBotForge
+artifactName: "${productName}-${version}-${os}-${arch}.${ext}"
+
+# The Electron application package is maintained as an npm workspace.
+directories:
+  app: apps/desktop
+  buildResources: apps/desktop/assets
+  output: release/${version}
+
+files:
+  - "dist/**/*"
+  - "dist-electron/**/*"
+  - "package.json"
+  - "!src/**/*"
+  - "!electron/**/*.ts"
+  - "!vite.config.ts"
+  - "!tsconfig*.json"
+
+asar: true
+npmRebuild: true
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+
+mac:
+  target:
+    - dmg
+
+linux:
+  target:
+    - AppImage

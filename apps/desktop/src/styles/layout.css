@@ -1,0 +1,167 @@
+﻿/* Shared page layout; scoped to Phase 06 selectors to avoid changing the existing builder CSS. */
+.p6-page {
+  width: 100%;
+  max-width: var(--zf-content-max);
+  min-width: 0;
+  margin-inline: auto;
+  padding: 0 0 var(--zf-space-6);
+  color: var(--text);
+}
+
+.p6-page-heading {
+  align-items: flex-start;
+  gap: var(--zf-space-5);
+  margin-bottom: var(--zf-space-6);
+}
+
+.p6-page-heading .page-subtitle {
+  max-width: 760px;
+}
+
+.p6-panel {
+  min-width: 0;
+  margin-top: var(--zf-space-5);
+  padding: var(--zf-space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--zf-radius-lg);
+  background: var(--panel);
+  box-shadow: var(--zf-shadow-soft);
+}
+
+.p6-panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--zf-space-4);
+  margin-bottom: var(--zf-space-5);
+}
+
+.p6-panel-heading h2,
+.p6-settings-state h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.p6-panel-heading p,
+.p6-settings-state p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.p6-actions,
+.p6-settings-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--zf-space-3);
+  margin-top: var(--zf-space-5);
+}
+
+.p6-actions-centered {
+  justify-content: center;
+}
+
+.p6-create-project {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.p6-create-project .p6-panel-heading {
+  margin-bottom: var(--zf-space-4);
+}
+
+.p6-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--zf-space-4);
+  margin-top: var(--zf-space-5);
+}
+
+.p6-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--zf-space-3);
+}
+
+.p6-project-summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--zf-space-4);
+}
+
+.p6-project-copy {
+  min-width: 0;
+}
+
+.p6-project-copy h2 {
+  margin: 4px 0 8px;
+  overflow-wrap: anywhere;
+  color: var(--text);
+  font-size: 20px;
+}
+
+.p6-project-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.p6-meta-row,
+.p6-data-context {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--zf-space-3);
+  margin-top: var(--zf-space-4);
+}
+
+.p6-stat-card {
+  min-width: 0;
+  padding: var(--zf-space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--zf-radius-md);
+  background: var(--panel-2);
+}
+
+.p6-data-empty,
+.p6-dashboard-empty {
+  padding-block: var(--zf-space-8);
+}
+
+.p6-data-empty > .empty-state,
+.p6-dashboard-empty > .empty-state {
+  margin-inline: auto;
+}
+
+.p6-settings-form {
+  display: grid;
+  gap: var(--zf-space-4);
+}
+
+.p6-settings-form .p6-panel {
+  margin-top: 0;
+}
+
+.p6-settings-footer {
+  margin-top: 0;
+  padding: var(--zf-space-2) 0;
+}
+
+.p6-settings-footer > span,
+.p6-footnote {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.p6-footnote {
+  margin: var(--zf-space-5) 0 0;
+}

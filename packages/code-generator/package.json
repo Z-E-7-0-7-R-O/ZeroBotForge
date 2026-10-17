@@ -1,0 +1,15 @@
+{
+  "name": "@zerobotforge/code-generator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Generates standalone TypeScript Telegram bot projects from ZeroBotForge project data.",
+  "exports": {
+    ".": "./src/generator.ts"
+  },
+  "dependencies": {
+    "@zerobotforge/shared": "0.1.0",
+    "@zerobotforge/project-format": "0.1.0",
+    "@zerobotforge/flow-engine": "0.1.0"
+  }
+}

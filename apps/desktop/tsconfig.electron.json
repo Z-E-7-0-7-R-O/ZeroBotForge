@@ -1,0 +1,29 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./tsconfig.electron.tsbuildinfo",
+    "composite": true,
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node"],
+    "noEmit": true,
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": [
+    "electron/**/*.ts",
+    "src/types/electron-api.ts",
+    "../../packages/shared/src/**/*.ts",
+    "../../packages/project-format/src/**/*.ts"
+  ],
+  "exclude": [
+    "electron/**/*.test.ts",
+    "../../packages/shared/src/**/*.test.ts",
+    "../../packages/project-format/src/**/*.test.ts"
+  ]
+}

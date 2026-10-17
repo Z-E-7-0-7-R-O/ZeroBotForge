@@ -1,0 +1,94 @@
+/** Stable identifier stored in every ZeroBotForge project document. */
+export const PROJECT_FILE_FORMAT = 'zerobotforge.project' as const;
+
+export const CURRENT_PROJECT_FORMAT_VERSION = 1 as const;
+export const LEGACY_PROJECT_FORMAT_VERSION = 0 as const;
+
+export const SUPPORTED_PROJECT_FORMAT_VERSIONS = [
+  LEGACY_PROJECT_FORMAT_VERSION,
+  CURRENT_PROJECT_FORMAT_VERSION,
+] as const;
+
+/** Canonical node types shared across the project. */
+export const NODE_TYPE_VALUES = [
+  'start',
+  'text',
+  'image',
+  'button',
+  'choice',
+  'menu',
+  'action',
+  'condition',
+  'input',
+  'end',
+] as const;
+
+export const NODE_TYPES = {
+  START: 'start',
+  TEXT: 'text',
+  IMAGE: 'image',
+  BUTTON: 'button',
+  CHOICE: 'choice',
+  MENU: 'menu',
+  ACTION: 'action',
+  CONDITION: 'condition',
+  INPUT: 'input',
+  END: 'end',
+} as const;
+
+/** Standard Telegram button color styles supported across interactive nodes. */
+export const BUTTON_COLOR_VALUES = [
+  'default',
+  'green',
+  'blue',
+  'red',
+] as const;
+
+/**
+ * Identifiers are 1–128 characters.
+ * Allowed characters: letters, digits, dot, underscore, colon, hyphen.
+ */
+export const IDENTIFIER_PATTERN =
+  '^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$' as const;
+
+export const DEFAULT_TOKEN_ENV_VAR = 'TELEGRAM_BOT_TOKEN' as const;
+export const DEFAULT_NODE_VERSION = 22 as const;
+
+/** Stable machine-readable error codes. */
+export const ERROR_CODES = {
+  INVALID_INPUT: 'INVALID_INPUT',
+  VALIDATION_FAILED: 'VALIDATION_FAILED',
+  INTERNAL_ERROR: 'INTERNAL_ERROR',
+
+  PROJECT_JSON_INVALID: 'PROJECT_JSON_INVALID',
+  PROJECT_FORMAT_INVALID: 'PROJECT_FORMAT_INVALID',
+  PROJECT_VERSION_MISSING: 'PROJECT_VERSION_MISSING',
+  PROJECT_VERSION_UNSUPPORTED: 'PROJECT_VERSION_UNSUPPORTED',
+  PROJECT_MIGRATION_FAILED: 'PROJECT_MIGRATION_FAILED',
+  PROJECT_SERIALIZATION_FAILED: 'PROJECT_SERIALIZATION_FAILED',
+  PROJECT_SEMANTIC_INVALID: 'PROJECT_SEMANTIC_INVALID',
+
+  FLOW_SCHEMA_INVALID: 'FLOW_SCHEMA_INVALID',
+  FLOW_INVALID: 'FLOW_INVALID',
+  FLOW_NODE_TYPE_UNREGISTERED: 'FLOW_NODE_TYPE_UNREGISTERED',
+  FLOW_NODE_CONFIG_INVALID: 'FLOW_NODE_CONFIG_INVALID',
+  FLOW_DUPLICATE_NODE_ID: 'FLOW_DUPLICATE_NODE_ID',
+  FLOW_DUPLICATE_EDGE_ID: 'FLOW_DUPLICATE_EDGE_ID',
+  FLOW_START_NODE_MISSING: 'FLOW_START_NODE_MISSING',
+  FLOW_MULTIPLE_START_NODES: 'FLOW_MULTIPLE_START_NODES',
+  FLOW_MULTIPLE_MENU_NODES: 'FLOW_MULTIPLE_MENU_NODES',
+  FLOW_EDGE_SOURCE_NOT_FOUND: 'FLOW_EDGE_SOURCE_NOT_FOUND',
+  FLOW_EDGE_TARGET_NOT_FOUND: 'FLOW_EDGE_TARGET_NOT_FOUND',
+  FLOW_SOURCE_PORT_INVALID: 'FLOW_SOURCE_PORT_INVALID',
+  FLOW_TARGET_PORT_INVALID: 'FLOW_TARGET_PORT_INVALID',
+  FLOW_EDGE_TO_START: 'FLOW_EDGE_TO_START',
+  FLOW_MULTIPLE_EDGES_FROM_PORT: 'FLOW_MULTIPLE_EDGES_FROM_PORT',
+  FLOW_OUTPUT_PORT_UNCONNECTED: 'FLOW_OUTPUT_PORT_UNCONNECTED',
+  FLOW_STEP_LIMIT_EXCEEDED: 'FLOW_STEP_LIMIT_EXCEEDED',
+  FLOW_ACTION_NOT_REGISTERED: 'FLOW_ACTION_NOT_REGISTERED',
+  FLOW_INVALID_INPUT: 'FLOW_INVALID_INPUT',
+  FLOW_EXECUTION_FAILED: 'FLOW_EXECUTION_FAILED',
+} as const;
+
+export type ErrorCode =
+  (typeof ERROR_CODES)[keyof typeof ERROR_CODES];

@@ -1,0 +1,25 @@
+export const IPC_CHANNELS = {
+  projectsCreate: "projects:create",
+  projectsOpen: "projects:open",
+  projectsSave: "projects:save",
+  projectsSaveAs: "projects:save-as",
+  exportProjectJson: "exports:project-json",
+  exportGeneratedProject: "exports:generated-project",
+  exportUpdateGeneratedProject: "exports:update-generated-project",
+  systemGetVersion: "system:get-version",
+  settingsGet: "settings:get",
+  settingsSave: "settings:save",
+  telegramGetStatus: "telegram:get-status",
+  telegramSetToken: "telegram:set-token",
+  telegramClearToken: "telegram:clear-token",
+  telegramTestConnection: "telegram:test-connection",
+  runtimeGetStatus: "runtime:get-status",
+  runtimeOpenGeneratedProject: "runtime:open-generated-project",
+  runtimeCompile: "runtime:compile",
+  runtimeStart: "runtime:start",
+  runtimeStop: "runtime:stop",
+  runtimeClearLogs: "runtime:clear-logs",
+  runtimeDeleteGeneratedProject: "runtime:delete-generated-project",
+} as const;
+
+export type IpcChannel = (typeof IPC_CHANNELS)[keyof typeof IPC_CHANNELS];
