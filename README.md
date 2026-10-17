@@ -6,7 +6,7 @@
 <div align="center">
 <i>An Electron and React desktop application for designing Telegram bot conversation flows, executing local runtime processes without terminal commands, and generating standalone TypeScript bot projects.</i>
 <br><br>
-<b>Developer:</b> Zero-AI-Native (Age 15, assisted by Google Gemini 3.1 Pro) <br>
+<b>Developer:</b> Zero-AI-Native (Age 15, assisted by Google Gemini 4 Argon) <br>
 <b>Package:</b> zerobotforge 0.1.0 (MIT License)<br>
 <b>Architecture:</b> Electron 44 / React 18 / TypeScript 5.6 / npm Workspaces Monorepo<br>
 <b>Status:</b> Initial Version (0.1.0, functional core, known limitations documented below)
