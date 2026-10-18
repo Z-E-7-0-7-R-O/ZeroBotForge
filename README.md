@@ -312,36 +312,125 @@ Click any directory link below to navigate to its dedicated `README.md`, which d
 
 #### 3. Verification and Test Suite Inventory
 
-The repository includes 16 Vitest test suites containing 96 test cases across `tests/unit/`, `tests/integration/`, `packages/*/src/`, and `apps/desktop/tests/`:
+The repository includes 16 Vitest test suites containing 97 test cases across `tests/unit/`, `tests/integration/`, `packages/*/src/`, and `apps/desktop/tests/`:
 
 <table>
   <thead>
     <tr>
-      <th align="left">Test Suite Path</th>
-      <th align="left">Layer / Scope</th>
-      <th align="right">Tests (<code>it</code>)</th>
+      <th align="left">Test Suite</th>
+      <th align="left">Scope</th>
+      <th align="right">Tests</th>
+      <th align="right">Result</th>
+      <th align="right">Suite Time</th>
     </tr>
   </thead>
   <tbody>
-    <tr><td><code>tests/unit/code-generator.test.ts</code></td><td>7-file manifest generation, <code>project.generation</code> transfer, untrusted node text isolation &amp; TS transpilation, token leak rejection</td><td align="right">4</td></tr>
-    <tr><td><code>tests/unit/flow-engine.test.ts</code></td><td><code>sample-flow.json</code> pause at button prompt, action success/failure branch routing, image branch, invalid optionId failure, cyclic graph step limit</td><td align="right">6</td></tr>
-    <tr><td><code>tests/unit/flow-validator.test.ts</code></td><td><code>sample-flow.json</code> validation, missing/multiple start nodes, duplicate node/edge IDs, broken endpoints/ports, invalid image URL &amp; unconnected button ports</td><td align="right">5</td></tr>
-    <tr><td><code>tests/unit/project-format.test.ts</code></td><td><code>sample-project.json</code> round-trip, strict schema rejection of unknown keys, legacy v0 migration, invalid JSON/version errors, semantic validation</td><td align="right">5</td></tr>
-    <tr><td><code>tests/integration/export-project.test.ts</code></td><td>Temporary directory atomic write of 7-file manifest, Telegraf dependency check, TS transpilation of generated <code>bot.ts</code>/<code>handlers.ts</code>, invalid graph refusal</td><td align="right">2</td></tr>
-    <tr><td><code>tests/integration/project-storage.test.ts</code></td><td><code>ProjectFileSystemService</code> create/save/reopen/update lifecycle on disk, v0 file migration on read, missing/extension/corrupt/oversized file errors</td><td align="right">3</td></tr>
-    <tr><td><code>tests/integration/telegram-adapter.test.ts</code></td><td>Multi-turn <code>/start</code> and <code>callback_query</code> routing with <code>MockTelegramClient</code> and <code>ConversationStore</code>, corrupt state quarantine, token redaction</td><td align="right">2</td></tr>
-    <tr><td><code>packages/code-generator/src/generator.test.ts</code></td><td>Empty flow rejection, non-project rejection, fixed manifest check, blank token placeholder, markdown/source injection escaping, token pattern rejection, unsupported node rejection, TS syntax verification, npm manifest dependencies</td><td align="right">9</td></tr>
-    <tr><td><code>packages/flow-engine/src/flow-engine.test.ts</code></td><td><code>validateFlow</code> rules, <code>FlowGraph</code> reachability, <code>executeFlow</code> text/button pause &amp; resume, step budget termination, allowlisted vs unregistered <code>FlowActionRegistry</code></td><td align="right">13</td></tr>
-    <tr><td><code>packages/project-format/src/project.serialization.test.ts</code></td><td><code>ProjectDocumentSchema</code> validation, JSON serialization round-trip, invalid serialization rejection, malformed JSON error codes, v0 migration, semantic dangling edge detection</td><td align="right">9</td></tr>
-    <tr><td><code>packages/telegram-adapter/src/telegram-adapter.test.ts</code></td><td><code>normalizeTelegramUpdate</code>, <code>mapTelegramError</code> (401, 429, 409, network, token redaction), <code>ConversationStore</code> persistence/concurrency/quarantine, <code>TelegramUpdateRouter</code> routing/deduplication, <code>TelegramBotManager</code> idempotency</td><td align="right">14</td></tr>
-    <tr><td><code>apps/desktop/tests/app-settings.service.test.ts</code></td><td><code>AppSettingsService</code> defaults, persistence across instances, invalid interval rejection (<code>SETTINGS_INVALID</code>), preservation of malformed <code>settings.json</code></td><td align="right">4</td></tr>
-    <tr><td><code>apps/desktop/tests/file-system.service.test.ts</code></td><td><code>ProjectFileSystemService</code> read/write round-trip, invalid extension rejection (<code>.exe</code>), malformed JSON preservation, <code>MAX_PROJECT_FILE_BYTES</code> enforcement, invalid data pre-write rejection</td><td align="right">5</td></tr>
-    <tr><td><code>apps/desktop/tests/flow-editor.model.test.ts</code></td><td><code>createEmptyEditorFlow</code> validity, incomplete image node detection, DTO round-trip of node positions and edge handles</td><td align="right">3</td></tr>
-    <tr><td><code>apps/desktop/tests/ipc-security.test.ts</code></td><td><code>isAllowedRendererUrl</code> in dev (<code>http://127.0.0.1:5173/</code>) and packaged mode (<code>dist/index.html</code>), look-alike origin rejection, <code>assertTrustedIpcSender</code> main-frame vs iframe enforcement</td><td align="right">5</td></tr>
-    <tr><td><code>apps/desktop/tests/phase08-store-services.test.ts</code></td><td><code>flow.service</code> node/edge creation &amp; duplicate port rejection, <code>generateProjectFiles</code> manifest, <code>runFlowPreview</code> execution/error/resume, <code>project.store</code> and <code>flow.store</code> dirty state tracking</td><td align="right">7</td></tr>
-    <tr><td><b>Total</b></td><td>16 test suites across root, packages, and desktop workspaces</td><td align="right"><b>96</b></td></tr>
+    <tr><td><code>tests/unit/code-generator.test.ts</code></td><td>7-file manifest generation, <code>project.generation</code> transfer, untrusted node text isolation &amp; TS transpilation, token leak rejection</td><td align="right">4</td><td align="right">PASS</td><td align="right">335 ms</td></tr>
+    <tr><td><code>tests/unit/flow-engine.test.ts</code></td><td><code>sample-flow.json</code> pause at button prompt, action success/failure branch routing, image branch, invalid optionId failure, cyclic graph step limit</td><td align="right">6</td><td align="right">PASS</td><td align="right">38 ms</td></tr>
+    <tr><td><code>tests/unit/flow-validator.test.ts</code></td><td><code>sample-flow.json</code> validation, missing/multiple start nodes, duplicate node/edge IDs, broken endpoints/ports, invalid image URL &amp; unconnected button ports</td><td align="right">5</td><td align="right">PASS</td><td align="right">28 ms</td></tr>
+    <tr><td><code>tests/unit/project-format.test.ts</code></td><td><code>sample-project.json</code> round-trip, strict schema rejection of unknown keys, legacy v0 migration, invalid JSON/version errors, semantic validation</td><td align="right">5</td><td align="right">PASS</td><td align="right">28 ms</td></tr>
+    <tr><td><code>tests/integration/export-project.test.ts</code></td><td>Temporary directory atomic write of 7-file manifest, Telegraf dependency check, TS transpilation of generated <code>bot.ts</code>/<code>handlers.ts</code>, invalid graph refusal</td><td align="right">2</td><td align="right">PASS</td><td align="right">447 ms</td></tr>
+    <tr><td><code>tests/integration/project-storage.test.ts</code></td><td><code>ProjectFileSystemService</code> create/save/reopen/update lifecycle on disk, v0 file migration on read, missing/extension/corrupt/oversized file errors</td><td align="right">3</td><td align="right">PASS</td><td align="right">124 ms</td></tr>
+    <tr><td><code>tests/integration/telegram-adapter.test.ts</code></td><td>Multi-turn <code>/start</code> and <code>callback_query</code> routing with <code>MockTelegramClient</code> and <code>ConversationStore</code>, corrupt state quarantine, token redaction</td><td align="right">2</td><td align="right">PASS</td><td align="right">192 ms</td></tr>
+    <tr><td><code>packages/code-generator/src/generator.test.ts</code></td><td>Empty flow rejection, non-project rejection, fixed manifest check, blank token placeholder, markdown/source injection escaping, token pattern rejection, unsupported node rejection, TS syntax verification, npm manifest dependencies</td><td align="right">9</td><td align="right">PASS</td><td align="right">311 ms</td></tr>
+    <tr><td><code>packages/flow-engine/src/flow-engine.test.ts</code></td><td><code>validateFlow</code> rules, <code>FlowGraph</code> reachability, <code>executeFlow</code> text/button pause &amp; resume, step budget termination, allowlisted vs unregistered <code>FlowActionRegistry</code></td><td align="right">13</td><td align="right">PASS</td><td align="right">30 ms</td></tr>
+    <tr><td><code>packages/project-format/src/project.serialization.test.ts</code></td><td><code>ProjectDocumentSchema</code> validation, JSON serialization round-trip, invalid serialization rejection, malformed JSON error codes, v0 migration, semantic dangling edge detection</td><td align="right">9</td><td align="right">PASS</td><td align="right">25 ms</td></tr>
+    <tr><td><code>packages/telegram-adapter/src/telegram-adapter.test.ts</code></td><td><code>normalizeTelegramUpdate</code>, <code>mapTelegramError</code> (401, 429, 409, network, token redaction), <code>ConversationStore</code> persistence/concurrency/quarantine, <code>TelegramUpdateRouter</code> routing/deduplication, <code>TelegramBotManager</code> idempotency</td><td align="right">14</td><td align="right">PASS</td><td align="right">181 ms</td></tr>
+    <tr><td><code>apps/desktop/tests/app-settings.service.test.ts</code></td><td><code>AppSettingsService</code> defaults, persistence across instances, invalid interval rejection (<code>SETTINGS_INVALID</code>), preservation of malformed <code>settings.json</code></td><td align="right">4</td><td align="right">PASS</td><td align="right">53 ms</td></tr>
+    <tr><td><code>apps/desktop/tests/file-system.service.test.ts</code></td><td><code>ProjectFileSystemService</code> read/write round-trip, invalid extension rejection (<code>.exe</code>), malformed JSON preservation, <code>MAX_PROJECT_FILE_BYTES</code> enforcement, invalid data pre-write rejection</td><td align="right">5</td><td align="right">PASS</td><td align="right">93 ms</td></tr>
+    <tr><td><code>apps/desktop/tests/flow-editor.model.test.ts</code></td><td><code>createEmptyEditorFlow</code> validity, incomplete image node detection, DTO round-trip of node positions and edge handles</td><td align="right">3</td><td align="right">PASS</td><td align="right">18 ms</td></tr>
+    <tr><td><code>apps/desktop/tests/ipc-security.test.ts</code></td><td><code>isAllowedRendererUrl</code> in dev (<code>http://127.0.0.1:5173/</code>) and packaged mode (<code>dist/index.html</code>), look-alike origin rejection, <code>assertTrustedIpcSender</code> main-frame vs iframe enforcement</td><td align="right">5</td><td align="right">PASS</td><td align="right">8 ms</td></tr>
+    <tr><td><code>apps/desktop/tests/phase08-store-services.test.ts</code></td><td><code>flow.service</code> node/edge creation &amp; duplicate port rejection, <code>generateProjectFiles</code> manifest, <code>runFlowPreview</code> execution/error/resume, <code>project.store</code> and <code>flow.store</code> dirty state tracking</td><td align="right">8</td><td align="right">PASS</td><td align="right">37 ms</td></tr>
+    <tr><td><b>Total</b></td><td>16 suites across root, packages, and desktop workspaces</td><td align="right"><b>97</b></td><td align="right"><b>97 passed</b></td><td align="right"><b>2.17 s</b></td></tr>
   </tbody>
 </table>
+
+<details>
+<summary><b>Raw test output (<code>npm test</code>): 16 suites passed, 97 tests passed. Click to expand or collapse.</b></summary>
+
+```text
+D:\Zero\Project\TypeScript.Nodsjs\ZeroBotForge>npm test
+
+> zerobotforge@0.1.0 test
+> vitest run --passWithNoTests
+
+
+ RUN  v3.2.7 D:/Zero/Project/TypeScript.Nodsjs/ZeroBotForge
+
+ ✓ apps/desktop/tests/app-settings.service.test.ts (4 tests) 53ms
+ ✓ apps/desktop/tests/file-system.service.test.ts (5 tests) 93ms
+ ✓ packages/flow-engine/src/flow-engine.test.ts (13 tests) 30ms
+ ✓ tests/unit/flow-engine.test.ts (6 tests) 38ms
+ ✓ tests/integration/project-storage.test.ts (3 tests) 124ms
+ ✓ packages/telegram-adapter/src/telegram-adapter.test.ts (14 tests) 181ms
+ ✓ tests/integration/telegram-adapter.test.ts (2 tests) 192ms
+ ✓ apps/desktop/tests/phase08-store-services.test.ts (8 tests) 37ms
+ ✓ packages/project-format/src/project.serialization.test.ts (9 tests) 25ms
+ ✓ packages/code-generator/src/generator.test.ts (9 tests) 311ms
+ ✓ tests/unit/flow-validator.test.ts (5 tests) 28ms
+ ✓ apps/desktop/tests/flow-editor.model.test.ts (3 tests) 18ms
+ ✓ apps/desktop/tests/ipc-security.test.ts (5 tests) 8ms
+ ✓ tests/unit/project-format.test.ts (5 tests) 28ms
+ ✓ tests/unit/code-generator.test.ts (4 tests) 335ms
+ ✓ tests/integration/export-project.test.ts (2 tests) 447ms
+   ✓ Phase 12 integration: standalone bot project export to temporary directory > generates and atomically writes all required files to a temporary directory  437ms
+
+ Test Files  16 passed (16)
+      Tests  97 passed (97)
+   Start at  19:22:56
+   Duration  2.17s (transform 1.63s, setup 0ms, collect 8.17s, tests 1.95s, environment 6ms, prepare 4.82s)
+```
+
+</details>
+
+<details>
+<summary><b>Raw unit test output (<code>npm run test:unit</code>): 4 suites passed, 20 tests passed. Click to expand or collapse.</b></summary>
+
+```text
+D:\Zero\Project\TypeScript.Nodsjs\ZeroBotForge>npm run test:unit
+
+> zerobotforge@0.1.0 test:unit
+> vitest run tests/unit
+
+
+ RUN  v3.2.7 D:/Zero/Project/TypeScript.Nodsjs/ZeroBotForge
+
+ ✓ tests/unit/project-format.test.ts (5 tests) 16ms
+ ✓ tests/unit/flow-validator.test.ts (5 tests) 17ms
+ ✓ tests/unit/flow-engine.test.ts (6 tests) 23ms
+ ✓ tests/unit/code-generator.test.ts (4 tests) 182ms
+
+ Test Files  4 passed (4)
+      Tests  20 passed (20)
+   Start at  19:23:11
+   Duration  1.48s (transform 521ms, setup 0ms, collect 1.88s, tests 238ms, environment 1ms, prepare 760ms)
+```
+
+</details>
+
+<details>
+<summary><b>Raw integration test output (<code>npm run test:integration</code>): 3 suites passed, 7 tests passed. Click to expand or collapse.</b></summary>
+
+```text
+D:\Zero\Project\TypeScript.Nodsjs\ZeroBotForge>npm run test:integration
+
+> zerobotforge@0.1.0 test:integration
+> vitest run tests/integration
+
+
+ RUN  v3.2.7 D:/Zero/Project/TypeScript.Nodsjs/ZeroBotForge
+
+ ✓ tests/integration/project-storage.test.ts (3 tests) 57ms
+ ✓ tests/integration/telegram-adapter.test.ts (2 tests) 71ms
+ ✓ tests/integration/export-project.test.ts (2 tests) 219ms
+
+ Test Files  3 passed (3)
+      Tests  7 passed (7)
+   Start at  19:23:16
+   Duration  1.38s (transform 340ms, setup 0ms, collect 1.50s, tests 347ms, environment 1ms, prepare 504ms)
+```
+
+</details>
 
 --------------------------------------------------------------------------------
 
