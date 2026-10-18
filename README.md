@@ -374,59 +374,6 @@ Packaged artifacts are written to `release/0.1.0/` (for example, `ZeroBotForge-0
 | `npm run test:unit` | `vitest run tests/unit` | Runs the 4 root unit test suites. |
 | `npm run test:integration` | `vitest run tests/integration` | Runs the 3 root integration test suites. |
 
-### Programmatic Package Usage Example
-
-While ZeroBotForge is primarily operated through its desktop GUI, its internal workspace packages can be imported directly within the monorepo (as demonstrated in `tests/unit/` and `tests/integration/`):
-
-```typescript
-import { createEmptyProject } from "@zerobotforge/project-format";
-import { serializeProject, deserializeProject } from "@zerobotforge/project-format/serialization";
-import { validateFlow } from "@zerobotforge/flow-engine/validator";
-import { executeFlow } from "@zerobotforge/flow-engine/executor";
-import { generateProjectFiles } from "@zerobotforge/code-generator";
-import { projectIdSchema, flowIdSchema, nodeIdSchema, edgeIdSchema } from "@zerobotforge/shared/validators";
-
-// 1. Create a validated project document
-const project = createEmptyProject({
-  id: projectIdSchema.parse("project-support-bot"),
-  name: "Support Assistant",
-});
-
-// 2. Define a Start -> Text conversation flow
-const startId = nodeIdSchema.parse("node-start");
-const textId = nodeIdSchema.parse("node-welcome");
-const flowId = flowIdSchema.parse("flow-main");
-
-project.flows = [
-  {
-    id: flowId,
-    name: "Main Flow",
-    nodes: [
-      { id: startId, type: "start", label: "Start", position: { x: 80, y: 120 }, data: {} },
-      { id: textId, type: "text", label: "Welcome", position: { x: 320, y: 120 }, data: { text: "Welcome to Support Assistant." } },
-    ],
-    edges: [
-      { id: edgeIdSchema.parse("edge-1"), sourceNodeId: startId, sourceHandle: "next", targetNodeId: textId, targetHandle: "in" },
-    ],
-  },
-];
-project.activeFlowId = flowId;
-
-// 3. Validate and execute the flow in memory
-const validation = validateFlow(project.flows[0]);
-if (validation.valid) {
-  const result = await executeFlow(validation.flow);
-  console.log(result.status, result.events); // "completed", [{ type: "send_text", ... }]
-}
-
-// 4. Serialize project and generate standalone TypeScript bot files
-const rawJson = serializeProject(project);
-const restored = deserializeProject(rawJson);
-const generatedFiles = generateProjectFiles(restored);
-console.log(generatedFiles.map((f) => f.path));
-// ["package.json", "tsconfig.json", ".env.example", "project.json", "src/bot.ts", "src/handlers.ts", "README.md"]
-```
-
 --------------------------------------------------------------------------------
 
 ## License
