@@ -447,8 +447,6 @@ npm run package:desktop
 ```
 Packaged artifacts are written to `release/0.1.0/` (for example, `ZeroBotForge-0.1.0-win-x64.exe`).
 
---------------------------------------------------------------------------------
-
 ## License
 
 Released under the MIT License. See the [LICENSE](LICENSE) file for full license text.
