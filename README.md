@@ -37,111 +37,64 @@ ZeroBotForge is designed for users who do not possess programming knowledge as w
 
 ### Studio Interface Gallery
 
-*Click any slide button below to switch between screenshots #1 through #13:*
+*Slide horizontally to view screenshots #1 through #13 of the ZeroBotForge desktop environment:*
 
-<details open name="zbf-slides">
-  <summary><b>Photo #1 from ZeroBotForge</b></summary>
-  <br>
-  <p align="center">
-    <img src="assets/Photo 1 from ZeroBotForge.png" alt="Photo #1 from ZeroBotForge" width="100%" />
-  </p>
-</details>
-
-<details name="zbf-slides">
-  <summary><b>Photo #2 from ZeroBotForge</b></summary>
-  <br>
-  <p align="center">
-    <img src="assets/Photo 2 from ZeroBotForge.png" alt="Photo #2 from ZeroBotForge" width="100%" />
-  </p>
-</details>
-
-<details name="zbf-slides">
-  <summary><b>Photo #3 from ZeroBotForge</b></summary>
-  <br>
-  <p align="center">
-    <img src="assets/Photo 3 from ZeroBotForge.png" alt="Photo #3 from ZeroBotForge" width="100%" />
-  </p>
-</details>
-
-<details name="zbf-slides">
-  <summary><b>Photo #4 from ZeroBotForge</b></summary>
-  <br>
-  <p align="center">
-    <img src="assets/Photo 4 from ZeroBotForge.png" alt="Photo #4 from ZeroBotForge" width="100%" />
-  </p>
-</details>
-
-<details name="zbf-slides">
-  <summary><b>Photo #5 from ZeroBotForge</b></summary>
-  <br>
-  <p align="center">
-    <img src="assets/Photo 5 from ZeroBotForge.png" alt="Photo #5 from ZeroBotForge" width="100%" />
-  </p>
-</details>
-
-<details name="zbf-slides">
-  <summary><b>Photo #6 from ZeroBotForge</b></summary>
-  <br>
-  <p align="center">
-    <img src="assets/Photo 6 from ZeroBotForge.png" alt="Photo #6 from ZeroBotForge" width="100%" />
-  </p>
-</details>
-
-<details name="zbf-slides">
-  <summary><b>Photo #7 from ZeroBotForge</b></summary>
-  <br>
-  <p align="center">
-    <img src="assets/Photo 7 from ZeroBotForge.png" alt="Photo #7 from ZeroBotForge" width="100%" />
-  </p>
-</details>
-
-<details name="zbf-slides">
-  <summary><b>Photo #8 from ZeroBotForge</b></summary>
-  <br>
-  <p align="center">
-    <img src="assets/Photo 8 from ZeroBotForge.png" alt="Photo #8 from ZeroBotForge" width="100%" />
-  </p>
-</details>
-
-<details name="zbf-slides">
-  <summary><b>Photo #9 from ZeroBotForge</b></summary>
-  <br>
-  <p align="center">
-    <img src="assets/Photo 9 from ZeroBotForge.png" alt="Photo #9 from ZeroBotForge" width="100%" />
-  </p>
-</details>
-
-<details name="zbf-slides">
-  <summary><b>Photo #10 from ZeroBotForge</b></summary>
-  <br>
-  <p align="center">
-    <img src="assets/Photo 10 from ZeroBotForge.png" alt="Photo #10 from ZeroBotForge" width="100%" />
-  </p>
-</details>
-
-<details name="zbf-slides">
-  <summary><b>Photo #11 from ZeroBotForge</b></summary>
-  <br>
-  <p align="center">
-    <img src="assets/Photo 11 from ZeroBotForge.png" alt="Photo #11 from ZeroBotForge" width="100%" />
-  </p>
-</details>
-
-<details name="zbf-slides">
-  <summary><b>Photo #12 from ZeroBotForge</b></summary>
-  <br>
-  <p align="center">
-    <img src="assets/Photo 12 from ZeroBotForge.png" alt="Photo #12 from ZeroBotForge" width="100%" />
-  </p>
-</details>
-
-<details name="zbf-slides">
-  <summary><b>Photo #13 from ZeroBotForge</b></summary>
-  <br>
-  <p align="center">
-    <img src="assets/Photo 13 from ZeroBotForge.png" alt="Photo #13 from ZeroBotForge" width="100%" />
-  </p>
-</details>
+<table>
+  <tr>
+    <td align="center">
+      <pre>                              Photo #1 from ZeroBotForge                              </pre>
+      <img src="assets/Photo 1 from ZeroBotForge.png" alt="Photo #1 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center">
+      <pre>                              Photo #2 from ZeroBotForge                              </pre>
+      <img src="assets/Photo 2 from ZeroBotForge.png" alt="Photo #2 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center">
+      <pre>                              Photo #3 from ZeroBotForge                              </pre>
+      <img src="assets/Photo 3 from ZeroBotForge.png" alt="Photo #3 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center">
+      <pre>                              Photo #4 from ZeroBotForge                              </pre>
+      <img src="assets/Photo 4 from ZeroBotForge.png" alt="Photo #4 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center">
+      <pre>                              Photo #5 from ZeroBotForge                              </pre>
+      <img src="assets/Photo 5 from ZeroBotForge.png" alt="Photo #5 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center">
+      <pre>                              Photo #6 from ZeroBotForge                              </pre>
+      <img src="assets/Photo 6 from ZeroBotForge.png" alt="Photo #6 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center">
+      <pre>                              Photo #7 from ZeroBotForge                              </pre>
+      <img src="assets/Photo 7 from ZeroBotForge.png" alt="Photo #7 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center">
+      <pre>                              Photo #8 from ZeroBotForge                              </pre>
+      <img src="assets/Photo 8 from ZeroBotForge.png" alt="Photo #8 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center">
+      <pre>                              Photo #9 from ZeroBotForge                              </pre>
+      <img src="assets/Photo 9 from ZeroBotForge.png" alt="Photo #9 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center">
+      <pre>                              Photo #10 from ZeroBotForge                             </pre>
+      <img src="assets/Photo 10 from ZeroBotForge.png" alt="Photo #10 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center">
+      <pre>                              Photo #11 from ZeroBotForge                             </pre>
+      <img src="assets/Photo 11 from ZeroBotForge.png" alt="Photo #11 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center">
+      <pre>                              Photo #12 from ZeroBotForge                             </pre>
+      <img src="assets/Photo 12 from ZeroBotForge.png" alt="Photo #12 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center">
+      <pre>                              Photo #13 from ZeroBotForge                             </pre>
+      <img src="assets/Photo 13 from ZeroBotForge.png" alt="Photo #13 from ZeroBotForge" width="800" />
+    </td>
+  </tr>
+</table>
 
 ### Core Implemented Mechanisms
 
