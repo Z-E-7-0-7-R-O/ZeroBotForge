@@ -43,7 +43,7 @@ ZeroBotForge is designed for users who do not possess programming knowledge as w
   <tr>
     <td align="center">
       <pre>                                                 Photo #1 from ZeroBotForge                                                 </pre>
-      <img src="assets/Photo 1 from ZeroBotForge.png" alt="Photo #1 from ZeroBotForge" width="900" />
+      <img src="assets/Photo 1 from ZeroBotForge.png" alt="Photo #1 from ZeroBotForge" width="850" />
       <br><br>
       <kbd><b>1 / 13</b></kbd>
     </td>
