@@ -35,6 +35,35 @@ ZeroBotForge is designed for users who do not possess programming knowledge as w
 5. **Local In-Studio Conversation Simulation:** [`ChatPreview.tsx`](apps/desktop/src/components/preview/ChatPreview.tsx) and [`preview.service.ts`](apps/desktop/src/services/preview.service.ts) execute the active flow graph locally inside the Bot Builder using `@zerobotforge/flow-engine` without network calls or a Telegram token. Users can step through text messages, image previews, inline buttons, choices, and persistent bottom menus to verify conversation branches in seconds.
 6. **Self-Contained Standalone Code Export:** When external hosting or code inspection is desired, `@zerobotforge/code-generator` emits a complete, dependency-complete TypeScript/Telegraf project (`package.json`, `tsconfig.json`, `.env.example`, `project.json`, `src/bot.ts`, `src/handlers.ts`, `README.md`) that compiles cleanly and runs independently of the ZeroBotForge desktop application.
 
+### Studio Interface Gallery
+
+*Scroll horizontally to view screenshots #1 through #5 of the ZeroBotForge desktop environment:*
+
+<table>
+  <tr>
+    <td align="center" style="min-width: 820px;">
+      <b>Photo #1 from ZeroBotForge</b><br><br>
+      <img src="assets/Photo%20%231%20from%20ZeroBotForge.png" alt="Photo #1 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center" style="min-width: 820px;">
+      <b>Photo #2 from ZeroBotForge</b><br><br>
+      <img src="assets/Photo%20%232%20from%20ZeroBotForge.png" alt="Photo #2 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center" style="min-width: 820px;">
+      <b>Photo #3 from ZeroBotForge</b><br><br>
+      <img src="assets/Photo%20%233%20from%20ZeroBotForge.png" alt="Photo #3 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center" style="min-width: 820px;">
+      <b>Photo #4 from ZeroBotForge</b><br><br>
+      <img src="assets/Photo%20%234%20from%20ZeroBotForge.png" alt="Photo #4 from ZeroBotForge" width="800" />
+    </td>
+    <td align="center" style="min-width: 820px;">
+      <b>Photo #5 from ZeroBotForge</b><br><br>
+      <img src="assets/Photo%20%235%20from%20ZeroBotForge.png" alt="Photo #5 from ZeroBotForge" width="800" />
+    </td>
+  </tr>
+</table>
+
 ### Core Implemented Mechanisms
 
 The functionality across the monorepo is organized into nine engineering mechanisms:
