@@ -59,7 +59,10 @@ export function renderGeneratorTemplate(
     throw new Error(`Generator template "${name}" contains an unresolved placeholder.`);
   }
 
-  return rendered;
+  const normalizedLineEndings = rendered.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+  return normalizedLineEndings.endsWith("\n")
+    ? normalizedLineEndings
+    : `${normalizedLineEndings}\n`;
 }
 
 export function renderGeneratorTemplates(
