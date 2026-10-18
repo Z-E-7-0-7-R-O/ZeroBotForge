@@ -447,20 +447,6 @@ npm run package:desktop
 ```
 Packaged artifacts are written to `release/0.1.0/` (for example, `ZeroBotForge-0.1.0-win-x64.exe`).
 
-### Workspace Scripts Reference (`package.json`)
-
-| Script | Command Executed | Description |
-|---|---|---|
-| `npm run dev` | `concurrently -k -n UI,Electron "npm:dev:ui" "npm:dev:electron"` | Runs the Vite renderer dev server and Electron shell concurrently. |
-| `npm run dev:ui` | `npm --workspace @zerobotforge/desktop run dev` | Starts Vite on `http://127.0.0.1:5173` (`strictPort: true`). |
-| `npm run dev:electron` | `wait-on http://127.0.0.1:5173 && npm run build:electron && npm --workspace @zerobotforge/desktop run start:electron` | Waits for Vite, compiles Electron entry points to `.cjs`, and launches Electron. |
-| `npm run typecheck` | `npm run typecheck:packages && npm run typecheck:ui && npm run typecheck:electron` | Runs TypeScript typechecking across all workspaces without emitting files. |
-| `npm run build` | `npm run typecheck && npm run build:ui && npm run build:electron` | Typechecks and builds both the React renderer (`dist/`) and Electron (`dist-electron/`). |
-| `npm run package:desktop` | `npm run build && electron-builder --config electron-builder.yml` | Builds the application and produces platform installers in `release/${version}`. |
-| `npm test` | `vitest run --passWithNoTests` | Executes all 16 test suites across the monorepo. |
-| `npm run test:unit` | `vitest run tests/unit` | Runs the 4 root unit test suites. |
-| `npm run test:integration` | `vitest run tests/integration` | Runs the 3 root integration test suites. |
-
 --------------------------------------------------------------------------------
 
 ## License
